@@ -221,6 +221,15 @@ function HomePage() {
         </button>
       </section>
 
+      <section className="px-10 pt-10">
+        <h2 className="text-center text-3xl font-bold text-cyan-400 mb-2">Lab 07: useState Counter Task</h2>
+        <p className="text-center text-gray-300 dark:text-gray-600 mb-6">
+          Increment, decrement, and reset actions for attendance activity counting.
+        </p>
+      </section>
+
+      <AttendanceCounter />
+
       <section className="grid md:grid-cols-3 gap-8 p-10">
         {features.map((f) => (
           <article
@@ -357,8 +366,6 @@ function HomePage() {
           {summaryText}
         </div>
       </section>
-
-      <AttendanceCounter />
 
       <section className="p-10 text-center">
         <div className="grid md:grid-cols-4 gap-6">
