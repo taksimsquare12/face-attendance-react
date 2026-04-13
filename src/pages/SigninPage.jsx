@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { applyTheme, getInitialTheme, getNextTheme } from "../constants/themeConstants";
-import logo from "../assets/images/logo.png";
-import googleIcon from "../assets/images/google.png";
-import facebookIcon from "../assets/images/facebook.png";
 
+const logo = "/favicon.svg";
+const googleIcon = "/favicon.svg";
+const facebookIcon = "/favicon.svg";
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function SigninPage() {

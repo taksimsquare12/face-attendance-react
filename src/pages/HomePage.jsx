@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.png";
-import classroomImage from "../assets/images/classroom.jpg";
-import faceScanImage from "../assets/images/facescan.jpg";
-import aiAttendanceImage from "../assets/images/ai-attendance.jpg";
 import { applyTheme, getInitialTheme, getNextTheme } from "../constants/themeConstants";
 import AttendanceCounter from "../components/views/homeViews/AttendanceCounter";
 
+const logo = "/favicon.svg";
+const classroomImage = "/favicon.svg";
+const faceScanImage = "/favicon.svg";
+const aiAttendanceImage = "/favicon.svg";
 const projectName = "AI Face Attendance System";
 const totalStudents = 50;
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.png";
 import { applyTheme, getInitialTheme, getNextTheme } from "../constants/themeConstants";
 
+const logo = "/favicon.svg";
 const projectInfo = {
   name: "AI Face Attendance System",
   year: 2026,

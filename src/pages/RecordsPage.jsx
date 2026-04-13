@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { applyTheme, getInitialTheme, getNextTheme } from "../constants/themeConstants";
-import logo from "../assets/images/logo.png";
 
+const logo = "/favicon.svg";
 const INITIAL_STUDENTS = [
   { id: 1, name: "Ahmad", status: "Present" },
   { id: 2, name: "Ali", status: "Late" },
