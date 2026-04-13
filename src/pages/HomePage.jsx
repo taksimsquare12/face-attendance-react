@@ -5,6 +5,7 @@ import classroomImage from "../assets/images/classroom.jpg";
 import faceScanImage from "../assets/images/facescan.jpg";
 import aiAttendanceImage from "../assets/images/ai-attendance.jpg";
 import { applyTheme, getInitialTheme, getNextTheme } from "../constants/themeConstants";
+import AttendanceCounter from "../components/views/homeViews/AttendanceCounter";
 
 const projectName = "AI Face Attendance System";
 const totalStudents = 50;
@@ -356,6 +357,8 @@ function HomePage() {
           {summaryText}
         </div>
       </section>
+
+      <AttendanceCounter />
 
       <section className="p-10 text-center">
         <div className="grid md:grid-cols-4 gap-6">
