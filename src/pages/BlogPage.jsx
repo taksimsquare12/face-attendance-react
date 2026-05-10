@@ -1,8 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import { applyTheme, getInitialTheme, getNextTheme } from "../constants/themeConstants";
 
-const logo = "/favicon.svg";
 const categories = ["AI Technology", "Education", "Security", "Innovation"];
 
 const articles = [
@@ -35,15 +32,9 @@ function articleSearchBlob(a) {
 }
 
 function BlogPage() {
-  const [theme, setTheme] = useState(getInitialTheme);
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState(null);
   const [toast, setToast] = useState(null);
-
-  useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
 
   useEffect(() => {
     console.log("Blog Page Loaded ✅");
@@ -82,64 +73,6 @@ function BlogPage() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white dark:bg-white dark:text-black">
-      <header className="bg-black/70 backdrop-blur-lg p-4 flex flex-wrap justify-between items-center gap-4 border-b border-gray-700">
-        <div className="flex items-center gap-2">
-          <img src={logo} alt="AI Attendance Logo" className="h-8 w-8" />
-          <h1 className="font-bold text-xl text-cyan-400">AI Attendance</h1>
-        </div>
-
-        <button
-          type="button"
-          className="md:hidden px-3 py-1 rounded bg-gray-800 text-sm"
-          onClick={() => setMobileOpen((o) => !o)}
-          aria-expanded={mobileOpen}
-        >
-          Menu
-        </button>
-
-        <nav
-          className={`${mobileOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row gap-4 md:gap-6 w-full md:w-auto`}
-        >
-          <Link to="/" className="hover:text-cyan-400">
-            Home
-          </Link>
-          <Link to="/blog" className="text-cyan-400">
-            Blog
-          </Link>
-          <Link to="/about" className="hover:text-cyan-400">
-            About
-          </Link>
-          <Link to="/contact" className="hover:text-cyan-400">
-            Contact
-          </Link>
-          <Link to="/records" className="hover:text-cyan-400">
-            Records
-          </Link>
-        </nav>
-
-        <div className="flex flex-wrap items-center gap-4 w-full md:w-auto justify-end">
-          <Link to="/signin" className="hover:text-cyan-400">
-            Sign In
-          </Link>
-          <Link
-            to="/signup"
-            className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg text-white"
-          >
-            Sign Up
-          </Link>
-          <Link to="/page-not-found" className="hover:text-cyan-400">
-            PageNotFound
-          </Link>
-          <button
-            type="button"
-            onClick={() => setTheme((current) => getNextTheme(current))}
-            className="px-3 py-1 bg-cyan-500 rounded text-white"
-          >
-            Toggle
-          </button>
-        </div>
-      </header>
-
       <section className="text-center py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
         <h1 className="text-4xl font-bold text-cyan-400 mb-2">AI &amp; Attendance Blog</h1>
         <p className="text-gray-300 dark:text-gray-600">Explore latest insights in AI, automation &amp; education</p>

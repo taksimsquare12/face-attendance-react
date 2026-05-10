@@ -15,7 +15,7 @@ import ViewSingleItemPage from "./pages/ViewSingleItemPage";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-950 text-white dark:bg-white dark:text-black">
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

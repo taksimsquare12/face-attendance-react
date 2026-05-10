@@ -3,8 +3,7 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { initializeTheme } from "./constants/themeConstants";
-
-const favicon = "/favicon.svg";
+import favicon from "./asserts/images/favicon.png";
 
 initializeTheme();
 const faviconTag = document.querySelector("link[rel='icon']");

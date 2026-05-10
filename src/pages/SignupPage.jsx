@@ -1,18 +1,12 @@
 import { Link } from "react-router-dom";
-import { useEffect, useMemo, useState } from "react";
-import { applyTheme, getInitialTheme, getNextTheme } from "../constants/themeConstants";
+import { useMemo, useState } from "react";
+import logo from "../asserts/images/logo.png";
+import googleIcon from "../asserts/images/google.png";
+import facebookIcon from "../asserts/images/facebook.png";
 
-const logo = "/favicon.svg";
-const googleIcon = "/favicon.svg";
-const facebookIcon = "/favicon.svg";
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function SignupPage() {
-  const [theme, setTheme] = useState(getInitialTheme);
-  useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -82,55 +76,11 @@ export default function SignupPage() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white dark:bg-white dark:text-black">
-        <nav className="bg-black/70 backdrop-blur-lg p-4 flex justify-between items-center border-b border-gray-700">
-          <div className="flex items-center space-x-2">
-            <img src={logo} className="h-8 w-8 object-contain" alt="AI Attendance Logo" />
-            <h1 className="font-bold text-xl text-cyan-400">AI Attendance</h1>
-          </div>
-
-          <div className="space-x-6 hidden md:block">
-            <Link to="/" className="hover:text-cyan-400">
-              Home
-            </Link>
-            <Link to="/blog" className="hover:text-cyan-400">
-              Blog
-            </Link>
-            <Link to="/about" className="hover:text-cyan-400">
-              About
-            </Link>
-            <Link to="/contact" className="hover:text-cyan-400">
-              Contact
-            </Link>
-            <Link to="/records" className="hover:text-cyan-400">
-              Records
-            </Link>
-          </div>
-
-          <div className="space-x-4">
-            <Link to="/signin" className="hover:text-cyan-400">
-              Sign In
-            </Link>
-            <Link
-              to="/signup"
-              className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg"
-            >
-              Sign Up
-            </Link>
-            <Link to="/page-not-found" className="hover:text-cyan-400">
-              PageNotFound
-            </Link>
-            <button
-              id="themeToggle"
-              type="button"
-              className="px-3 py-1 bg-cyan-500 rounded"
-              onClick={() => setTheme((current) => getNextTheme(current))}
-            >
-              Toggle
-            </button>
-          </div>
-        </nav>
-
         <section className="text-center py-14 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+          <div className="mb-3 flex flex-col items-center gap-2">
+            <img src={logo} className="h-12 w-12 object-contain" alt="" width={48} height={48} />
+            <p className="font-bold text-cyan-400">AI Attendance</p>
+          </div>
           <h1 className="text-4xl font-bold text-cyan-400">Create Account</h1>
           <p className="text-gray-300">Join AI Attendance System</p>
         </section>

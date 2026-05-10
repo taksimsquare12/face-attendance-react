@@ -1,8 +1,5 @@
-import { Link } from "react-router-dom";
-import { useEffect, useMemo, useState } from "react";
-import { applyTheme, getInitialTheme, getNextTheme } from "../constants/themeConstants";
+import { useMemo, useState } from "react";
 
-const logo = "/favicon.svg";
 const INITIAL_STUDENTS = [
   { id: 1, name: "Ahmad", status: "Present" },
   { id: 2, name: "Ali", status: "Late" },
@@ -17,11 +14,6 @@ export default function RecordsPage() {
   const [newName, setNewName] = useState("");
   const [newStatus, setNewStatus] = useState("Present");
   const [searchQuery, setSearchQuery] = useState("");
-  const [theme, setTheme] = useState(getInitialTheme);
-
-  useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
 
   const filteredStudents = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
@@ -73,54 +65,6 @@ export default function RecordsPage() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white dark:bg-white dark:text-black">
-        <nav className="bg-black/70 backdrop-blur-lg p-4 flex justify-between items-center border-b border-gray-700">
-          <div className="flex items-center space-x-2">
-            <img src={logo} className="h-8 w-8 object-contain" alt="AI Attendance Logo" />
-            <h1 className="font-bold text-xl text-cyan-400">AI Attendance</h1>
-          </div>
-
-          <div className="space-x-6 hidden md:block">
-            <Link to="/" className="hover:text-cyan-400">
-              Home
-            </Link>
-            <Link to="/blog" className="hover:text-cyan-400">
-              Blog
-            </Link>
-            <Link to="/about" className="hover:text-cyan-400">
-              About
-            </Link>
-            <Link to="/contact" className="hover:text-cyan-400">
-              Contact
-            </Link>
-            <Link to="/records" className="text-cyan-400">
-              Records
-            </Link>
-          </div>
-
-          <div className="space-x-4">
-            <Link to="/signin" className="hover:text-cyan-400">
-              Sign In
-            </Link>
-            <Link
-              to="/signup"
-              className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg"
-            >
-              Sign Up
-            </Link>
-            <Link to="/page-not-found" className="hover:text-cyan-400">
-              PageNotFound
-            </Link>
-            <button
-              id="themeToggle"
-              type="button"
-              className="px-3 py-1 bg-cyan-500 rounded"
-              onClick={() => setTheme((current) => getNextTheme(current))}
-            >
-              Toggle
-            </button>
-          </div>
-        </nav>
-
         <section className="text-center py-14 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
           <h1 className="text-4xl font-bold text-cyan-400">
             Student Attendance Records
