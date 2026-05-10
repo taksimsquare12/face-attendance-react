@@ -1,86 +1,50 @@
-<h1>AI Attendance System</h1>
+# AI Attendance System + Firestore CRUD Assignment
 
-<h2>📌 Live Demo & Repository</h2>
-<ul>
-  <li><strong>GitHub Repository:</strong> <a href="https://github.com/taksimsquare12/face-attendance-react" target="_blank">View Repo</a></li>
-  <li><strong>Live Hosting URL (Firebase):</strong> <a href="https://face-attendance-react.web.app" target="_blank">View Live Project</a></li>
-</ul>
+This project keeps the original attendance system features and extends the app with assignment CRUD pages using React Router DOM and Firebase Firestore.
 
-<h2>📖 Project Overview</h2>
-<p>
-This project is a Single Page Application (SPA) built with React, Tailwind CSS, and React Router DOM. 
-It integrates Firebase services (Firestore, Authentication, Hosting) and Cloudinary for image storage.
-</p>
+## Live URL
 
-<h2>✨ Key Features</h2>
-<ul>
-  <li>Responsive UI with Tailwind CSS</li>
-  <li>SPA Routing using React Router DOM</li>
-  <li>User Authentication (Email/Password)</li>
-  <li>Firestore Database integration</li>
-  <li>Cloudinary for image uploads</li>
-  <li>Firebase Hosting deployment</li>
-</ul>
+- https://face-attendance-react.web.app
 
-<h2>🛠 Technologies Used</h2>
-<ul>
-  <li>React + Vite</li>
-  <li>Tailwind CSS</li>
-  <li>React Router DOM</li>
-  <li>Firebase (Firestore, Auth, Hosting)</li>
-  <li>Cloudinary (Image Storage)</li>
-  <li>GitHub (Version Control)</li>
-</ul>
+## Features
 
-<h2>📂 Project Structure</h2>
-<pre>
-/index.html
-/vite.config.js
-/tailwind.config.js
-/README.md
-/package.json
-/package-lock.json
-/postcss.config.js
-/firebase.json
-/.gitignore
-/.firebaserc
-/eslint.config.js
-/public
-/node_modules
-/dist
-/.firebase
-/src
-  ├── main.jsx
-  ├── App.jsx
-  ├── App.css
-  ├── cloudinary.js
-  ├── firebase.js
-  ├── index.css
-  ├── /components
-  │   ├── /layouts
-  │   │   └── Navbar.jsx
-  ├── /pages
-  │   ├── HomePage.jsx
-  │   ├── About.jsx
-  │   ├── Contact.jsx
-  │   ├── BlogPage.jsx
-  │   ├── RecordsPage.jsx
-  │   ├── SigninPage.jsx
-  │   ├── SignupPAge.jsx
-  │   ├── PageNotFound.jsx
-  └── /services
-  │   ├── student.js
-  │   ├── record.js
-  └── constant
-  │   ├── themeConstants.js
-</pre>
+- Existing attendance system routes and UI remain available
+- SPA navigation via React Router DOM (no full page reloads)
+- Persistent navbar across attendance and item routes
+- Create item with Firestore
+- View all items in card layout
+- View single item with dynamic route `/items/:id`
+- Edit item with prefilled values and Firestore update
+- Delete item and update UI immediately
 
-<h2>⚙️ How to Run the Project</h2>
-<ol>
-  <li>Clone the repository: <code>git clone &lt;repo-url&gt;</code></li>
-  <li>Navigate to project folder: <code>cd face-attendance-react</code></li>
-  <li>Install dependencies: <code>npm install</code></li>
-  <li>Run development server: <code>npm run dev</code></li>
-  <li>Build project: <code>npm run build</code></li>
-  <li>Deploy to Firebase Hosting: <code>firebase deploy</code></li>
-</ol>
+## Attendance Routes
+
+- `/` -> Home
+- `/blog` -> Blog
+- `/about` -> About
+- `/records` -> Records
+- `/contact` -> Contact
+- `/signin` -> Sign In
+- `/signup` -> Sign Up
+- `/page-not-found` -> Not Found
+
+## Assignment CRUD Routes
+
+- `/items/new` -> Create Item
+- `/items` -> View All Items
+- `/items/:id` -> View Single Item
+- `/items/:id/edit` -> Edit Item
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Build and deploy
+
+```bash
+npm run build
+firebase deploy --only hosting
+```
